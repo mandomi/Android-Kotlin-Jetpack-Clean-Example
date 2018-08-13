@@ -1,4 +1,4 @@
-package com.mandomi.domain.interactor
+package com.mandomi.domain.interactor.base
 
 import com.farsitel.bazaar.domain.executer.PostExecutionThread
 import com.farsitel.bazaar.domain.executer.UseCaseExecutor

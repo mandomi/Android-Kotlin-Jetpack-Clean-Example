@@ -1,4 +1,4 @@
-package com.mandomi.domain.interactor
+package com.mandomi.domain.interactor.base
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

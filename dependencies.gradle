@@ -10,21 +10,24 @@ ext {
     androidxConstraintLayoutVersion = '1.1.2'
     androidxTestRunnerVersion = '1.1.0-alpha4'
     androidxEspressoVersion = '3.1.0-alpha4'
+    okhttpVersion = '3.10.0'
+    retrofitVersion = '2.4.0'
+    gsonVersion = '2.8.5'
 
     //Testing
     jUnitVersion = '4.12'
     mockitoKotlinVersion = '1.5.0'
 
     appDependencies = [
-            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
-            androidxAppcompat: "androidx.appcompat:appcompat:${androidxVersion}",
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            androidxAppcompat       : "androidx.appcompat:appcompat:${androidxVersion}",
             androidxConstraintLayout: "androidx.constraintlayout:constraintlayout:${androidxConstraintLayoutVersion}"
     ]
 
     appTestDependencies = [
-            androidxTestRunner: "androidx.appcompat:appcompat:${androidxVersion}",
+            androidxTestRunner  : "androidx.appcompat:appcompat:${androidxVersion}",
             androidxTestEspresso: "androidx.appcompat:appcompat:${androidxVersion}",
-            junit  : "junit:junit:${jUnitVersion}"
+            junit               : "junit:junit:${jUnitVersion}"
     ]
 
     domainDependencies = [
@@ -47,6 +50,23 @@ ext {
     ]
 
     dataTestDependencies = [
+            junit  : "junit:junit:${jUnitVersion}",
+            mockito: "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+    ]
+
+    remoteDependencies = [
+            javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject             : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxKotlin                : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            okhttp                  : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+            okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}",
+            retrofit                : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            gson                    : "com.google.code.gson:gson:${gsonVersion}",
+    ]
+
+    remoteTestDependencies = [
             junit  : "junit:junit:${jUnitVersion}",
             mockito: "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
     ]

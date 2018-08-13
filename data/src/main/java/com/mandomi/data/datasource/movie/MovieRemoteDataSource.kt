@@ -1,4 +1,4 @@
-package com.mandomi.data.datasource
+package com.mandomi.data.datasource.movie
 
 import com.mandomi.data.entity.MovieEntity
 import io.reactivex.Single

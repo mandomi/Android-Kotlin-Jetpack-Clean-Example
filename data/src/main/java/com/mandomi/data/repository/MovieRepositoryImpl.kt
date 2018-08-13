@@ -1,6 +1,6 @@
 package com.mandomi.data.repository
 
-import com.mandomi.data.datasource.MovieRemoteDataSource
+import com.mandomi.data.datasource.movie.MovieRemoteDataSource
 import com.mandomi.data.mapper.MovieEntityMapper
 import com.mandomi.domain.entity.Movie
 import com.mandomi.domain.repository.MovieRepository

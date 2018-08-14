@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion buildVersions.compileSdkVersion
@@ -13,6 +12,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
     }
     buildTypes {
         release {
@@ -44,12 +46,15 @@ dependencies {
     implementation appDependencies.androidxRecyclerView
     implementation appDependencies.androidxLifecycle
     implementation appDependencies.dagger
-    implementation appDependencies.daggerCompiler
+    kapt appDependencies.daggerCompiler
     implementation appDependencies.daggerAndroid
     implementation appDependencies.daggerAndroidSupport
-    implementation appDependencies.daggerAndroidProcessor
+    kapt appDependencies.daggerAndroidProcessor
     implementation appDependencies.javaxAnnotation
     implementation appDependencies.javaxInject
+    implementation appDependencies.rxKotlin
+    implementation appDependencies.rxAndroid
+    implementation appDependencies.picasso
 
     testImplementation appTestDependencies.junit
     androidTestImplementation appTestDependencies.androidxTestRunner

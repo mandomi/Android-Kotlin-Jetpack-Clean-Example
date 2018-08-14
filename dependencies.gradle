@@ -9,6 +9,7 @@ ext {
     //Libraries
     kotlinVersion = "$kotlin_version"
     rxKotlinVersion = '2.2.0'
+    rxAndroidVersion = '2.0.2'
     javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
     androidxVersion = '1.0.0-rc01'
@@ -19,14 +20,15 @@ ext {
     retrofitVersion = '2.4.0'
     gsonVersion = '2.8.5'
     architectureComponentsVersion = "2.0.0-rc01"
-    daggerVersion = "2.17"
+    daggerVersion = "2.16"
+    picassoVersion = "2.71828"
 
     //Testing
     jUnitVersion = '4.12'
     mockitoKotlinVersion = '1.5.0'
 
     appDependencies = [
-            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             androidxAppcompat       : "androidx.appcompat:appcompat:${androidxVersion}",
             androidxConstraintLayout: "androidx.constraintlayout:constraintlayout:${androidxConstraintLayoutVersion}",
             androidxLegacy          : "androidx.legacy:legacy-support-v4:${androidxVersion}",
@@ -40,6 +42,9 @@ ext {
             daggerAndroidProcessor  : "com.google.dagger:dagger-android-processor:${daggerVersion}",
             javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject             : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxKotlin                : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            rxAndroid               : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            picasso                 : "com.squareup.picasso:picasso:${picassoVersion}",
     ]
 
     appTestDependencies = [
@@ -52,7 +57,7 @@ ext {
             javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
             rxKotlin       : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}"
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
     ]
 
     domainTestDependencies = [
@@ -64,7 +69,7 @@ ext {
             javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
             rxKotlin       : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}"
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
     ]
 
     dataTestDependencies = [
@@ -76,7 +81,7 @@ ext {
             javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject             : "javax.inject:javax.inject:${javaxInjectVersion}",
             rxKotlin                : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             okhttp                  : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
             okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}",
             retrofit                : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
@@ -90,7 +95,7 @@ ext {
     ]
 
     localDependencies = [
-            kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             androidxAppcompat: "androidx.appcompat:appcompat:${androidxVersion}",
             room             : "androidx.room:room-runtime:${architectureComponentsVersion}",
             roomCompiler     : "androidx.room:room-compiler:${architectureComponentsVersion}",

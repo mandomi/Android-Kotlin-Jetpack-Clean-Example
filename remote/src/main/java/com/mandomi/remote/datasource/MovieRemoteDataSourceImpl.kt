@@ -13,14 +13,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
-class MovieRemoteDataSourceImpl @Inject constructor(
-        okHttpClient: OkHttpClient, private val dataMapper: PagedMovieEntityDataMapper) : MovieRemoteDataSource {
+class MovieRemoteDataSourceImpl @Inject constructor(okHttpClient: OkHttpClient, private val dataMapper: PagedMovieEntityDataMapper) : MovieRemoteDataSource {
 
     private val service: MovieService = Retrofit.Builder().baseUrl(RemoteConstants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient).build().create(MovieService::class.java)
 
-    override fun getMovies(): Single<PagedEntity<MovieEntity>> {
-        return service.getMovies(RemoteConstants.API_KEY).toRxSingle().map { dataMapper.apply(it) }
+    override fun getMovies(page: Int): Single<PagedEntity<MovieEntity>> {
+        return service.getMovies(page, RemoteConstants.API_KEY).toRxSingle().map { dataMapper.apply(it) }
     }
 }

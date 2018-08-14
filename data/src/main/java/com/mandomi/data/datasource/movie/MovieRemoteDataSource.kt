@@ -5,5 +5,5 @@ import com.mandomi.domain.entity.PagedEntity
 import io.reactivex.Single
 
 interface MovieRemoteDataSource {
-    fun getMovies(): Single<PagedEntity<MovieEntity>>
+    fun getMovies(page: Int): Single<PagedEntity<MovieEntity>>
 }

@@ -1,7 +1,7 @@
 package com.mandomi.domain.interactor.base
 
-import com.farsitel.bazaar.domain.executer.PostExecutionThread
-import com.farsitel.bazaar.domain.executer.UseCaseExecutor
+import com.mandomi.cleankotlin.domain.executer.PostExecutionThread
+import com.mandomi.cleankotlin.domain.executer.UseCaseExecutor
 import com.mandomi.domain.observer.SingleObserver
 import io.reactivex.Single
 import io.reactivex.annotations.CheckReturnValue

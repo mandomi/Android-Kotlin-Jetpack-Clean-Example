@@ -1,4 +1,4 @@
-package com.farsitel.bazaar.domain.executer
+package com.mandomi.cleankotlin.domain.executer
 
 import io.reactivex.Scheduler
 

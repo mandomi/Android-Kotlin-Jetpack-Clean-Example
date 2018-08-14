@@ -1,5 +1,11 @@
 ext {
 
+    buildVersions = [
+            compileSdkVersion: 28,
+            minSdkVersion    : 16,
+            targetSdkVersion : 28
+    ]
+
     //Libraries
     kotlinVersion = "$kotlin_version"
     rxKotlinVersion = '2.2.0'
@@ -13,6 +19,7 @@ ext {
     okhttpVersion = '3.10.0'
     retrofitVersion = '2.4.0'
     gsonVersion = '2.8.5'
+    architectureComponentsVersion = "2.0.0-rc01"
 
     //Testing
     jUnitVersion = '4.12'
@@ -69,6 +76,23 @@ ext {
     remoteTestDependencies = [
             junit  : "junit:junit:${jUnitVersion}",
             mockito: "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}",
+    ]
+
+    localDependencies = [
+            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            androidxAppcompat       : "androidx.appcompat:appcompat:${androidxVersion}",
+            androidxConstraintLayout: "androidx.constraintlayout:constraintlayout:${androidxConstraintLayoutVersion}",
+            room                    : "androidx.room:room-runtime:${architectureComponentsVersion}",
+            roomCompiler            : "androidx.room:room-compiler:${architectureComponentsVersion}",
+            roomRxjava              : "androidx.room:room-rxjava2:${architectureComponentsVersion}",
+            gson                    : "com.google.code.gson:gson:${gsonVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}"
+    ]
+
+    localTestDependencies = [
+            androidxTestRunner  : "androidx.appcompat:appcompat:${androidxVersion}",
+            androidxTestEspresso: "androidx.appcompat:appcompat:${androidxVersion}",
+            junit               : "junit:junit:${jUnitVersion}"
     ]
 
 }

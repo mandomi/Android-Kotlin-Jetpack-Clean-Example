@@ -3,7 +3,6 @@ package com.mandomi.cleankotlin.ui.movies
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.mandomi.cleankotlin.R
 import com.mandomi.cleankotlin.extension.createViewModel
@@ -46,13 +45,6 @@ class MoviesActivity : BaseActivity(), RecyclerItemClickListener<MovieItem> {
             setPadding(0, 0, 0, 0)
             itemAnimator?.changeDuration = 0
             layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
-
-//            addOnScrollListener(object : RecyclerView.OnScrollListener() {
-//                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-//                    super.onScrolled(recyclerView, dx, dy)
-//                    processOnMore()
-//                }
-//            })
         }
     }
 

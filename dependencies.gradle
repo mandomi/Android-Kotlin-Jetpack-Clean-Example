@@ -11,7 +11,6 @@ ext {
     rxKotlinVersion = '2.2.0'
     javaxAnnotationVersion = '1.0'
     javaxInjectVersion = '1'
-    supportLibraryVersion = '26.1.0'
     androidxVersion = '1.0.0-rc01'
     androidxConstraintLayoutVersion = '1.1.2'
     androidxTestRunnerVersion = '1.1.0-alpha4'
@@ -20,6 +19,7 @@ ext {
     retrofitVersion = '2.4.0'
     gsonVersion = '2.8.5'
     architectureComponentsVersion = "2.0.0-rc01"
+    daggerVersion = "2.17"
 
     //Testing
     jUnitVersion = '4.12'
@@ -28,7 +28,18 @@ ext {
     appDependencies = [
             kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
             androidxAppcompat       : "androidx.appcompat:appcompat:${androidxVersion}",
-            androidxConstraintLayout: "androidx.constraintlayout:constraintlayout:${androidxConstraintLayoutVersion}"
+            androidxConstraintLayout: "androidx.constraintlayout:constraintlayout:${androidxConstraintLayoutVersion}",
+            androidxLegacy          : "androidx.legacy:legacy-support-v4:${androidxVersion}",
+            material                : "com.google.android.material:material:${androidxVersion}",
+            androidxRecyclerView    : "androidx.recyclerview:recyclerview:${androidxVersion}",
+            androidxLifecycle       : "androidx.lifecycle:lifecycle-extensions:${architectureComponentsVersion}",
+            dagger                  : "com.google.dagger:dagger:${daggerVersion}",
+            daggerCompiler          : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerAndroid           : "com.google.dagger:dagger-android:${daggerVersion}",
+            daggerAndroidSupport    : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerAndroidProcessor  : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject             : "javax.inject:javax.inject:${javaxInjectVersion}",
     ]
 
     appTestDependencies = [
@@ -79,14 +90,13 @@ ext {
     ]
 
     localDependencies = [
-            kotlin                  : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
-            androidxAppcompat       : "androidx.appcompat:appcompat:${androidxVersion}",
-            androidxConstraintLayout: "androidx.constraintlayout:constraintlayout:${androidxConstraintLayoutVersion}",
-            room                    : "androidx.room:room-runtime:${architectureComponentsVersion}",
-            roomCompiler            : "androidx.room:room-compiler:${architectureComponentsVersion}",
-            roomRxjava              : "androidx.room:room-rxjava2:${architectureComponentsVersion}",
-            gson                    : "com.google.code.gson:gson:${gsonVersion}",
-            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}"
+            kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            androidxAppcompat: "androidx.appcompat:appcompat:${androidxVersion}",
+            room             : "androidx.room:room-runtime:${architectureComponentsVersion}",
+            roomCompiler     : "androidx.room:room-compiler:${architectureComponentsVersion}",
+            roomRxjava       : "androidx.room:room-rxjava2:${architectureComponentsVersion}",
+            gson             : "com.google.code.gson:gson:${gsonVersion}",
+            javaxInject      : "javax.inject:javax.inject:${javaxInjectVersion}"
     ]
 
     localTestDependencies = [

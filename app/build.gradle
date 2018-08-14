@@ -5,11 +5,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion buildVersions.compileSdkVersion
     defaultConfig {
         applicationId "com.mandomi.cleankotlin"
-        minSdkVersion 15
-        targetSdkVersion 28
+        minSdkVersion buildVersions.minSdkVersion
+        targetSdkVersion buildVersions.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,12 +25,31 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(":domain")
+    implementation project(":data")
+    implementation project(":remote")
+    implementation project(":local")
+
     def appDependencies = rootProject.ext.appDependencies
     def appTestDependencies = rootProject.ext.appTestDependencies
 
     implementation appDependencies.kotlin
     implementation appDependencies.androidxAppcompat
     implementation appDependencies.androidxConstraintLayout
+    implementation appDependencies.kotlin
+    implementation appDependencies.androidxAppcompat
+    implementation appDependencies.androidxConstraintLayout
+    implementation appDependencies.androidxLegacy
+    implementation appDependencies.material
+    implementation appDependencies.androidxRecyclerView
+    implementation appDependencies.androidxLifecycle
+    implementation appDependencies.dagger
+    implementation appDependencies.daggerCompiler
+    implementation appDependencies.daggerAndroid
+    implementation appDependencies.daggerAndroidSupport
+    implementation appDependencies.daggerAndroidProcessor
+    implementation appDependencies.javaxAnnotation
+    implementation appDependencies.javaxInject
 
     testImplementation appTestDependencies.junit
     androidTestImplementation appTestDependencies.androidxTestRunner

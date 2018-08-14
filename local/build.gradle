@@ -32,7 +32,6 @@ dependencies {
 
     implementation localDependencies.kotlin
     implementation localDependencies.androidxAppcompat
-    implementation localDependencies.androidxConstraintLayout
     implementation localDependencies.room
     kapt localDependencies.roomCompiler
     implementation localDependencies.roomRxjava

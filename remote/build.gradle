@@ -19,7 +19,7 @@ dependencies {
     implementation remoteDependencies.retrofit
     implementation remoteDependencies.retrofitGsonConverter
 
-    implementation remoteDependencies.gson
+    api remoteDependencies.gson
 
     testImplementation remoteTestDependencies.junit
     testImplementation remoteTestDependencies.mockito

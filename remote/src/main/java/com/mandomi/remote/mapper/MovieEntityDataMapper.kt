@@ -8,6 +8,8 @@ import javax.inject.Inject
 
 class MovieEntityDataMapper @Inject constructor() : DataMapper<MovieDto, MovieEntity>() {
     override fun apply(t: MovieDto): MovieEntity {
-        return MovieEntity(t.id, t.name, RemoteConstants.IMAGE_URL_PREFIX + t.imageToken)
+        return MovieEntity(t.id, t.name, t.description,
+                RemoteConstants.IMAGE_URL_PREFIX + t.imageToken, t.genres,
+                t.homePage, t.language, t.releaseDate)
     }
 }

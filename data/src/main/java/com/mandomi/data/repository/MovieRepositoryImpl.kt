@@ -11,7 +11,12 @@ import javax.inject.Inject
 class MovieRepositoryImpl @Inject constructor(
         private val movieRemoteDataSource: MovieRemoteDataSource
         , private val movieEntityMapper: MovieEntityMapper) : MovieRepository {
+
     override fun getMovies(page: Int): Single<PagedEntity<Movie>> {
         return movieRemoteDataSource.getMovies(page).map { movieEntityMapper.apply(it) }
+    }
+
+    override fun getMovieDetail(movieId: Int): Single<Movie> {
+        return movieRemoteDataSource.getMovieDetail(movieId).map { movieEntityMapper.apply(it) }
     }
 }

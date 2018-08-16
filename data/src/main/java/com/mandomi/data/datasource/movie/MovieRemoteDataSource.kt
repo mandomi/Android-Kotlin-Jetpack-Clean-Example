@@ -6,4 +6,6 @@ import io.reactivex.Single
 
 interface MovieRemoteDataSource {
     fun getMovies(page: Int): Single<PagedEntity<MovieEntity>>
+
+    fun getMovieDetail(movieId: Int): Single<MovieEntity>
 }

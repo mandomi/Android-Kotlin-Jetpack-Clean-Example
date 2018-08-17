@@ -1,0 +1,137 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.mandomi.cleankotlin.ui.movie.MovieItem" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/videoPoster"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                app:imageUrl="@{movie.coverUrl}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/videoName"
+                style="@style/DetailText"
+                android:text="@{movie.name}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/videoPoster"
+                android:layout_marginTop="32dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/genresTitle"
+                style="@style/TitleText"
+                android:text="Genres"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/videoName" />
+
+            <TextView
+                android:id="@+id/genresText"
+                style="@style/DetailText"
+                android:text="@{movie.genres.toString()}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genresTitle" />
+
+            <TextView
+                android:id="@+id/summaryTitle"
+                style="@style/TitleText"
+                android:text="Summary"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genresText" />
+
+            <TextView
+                android:id="@+id/summaryText"
+                style="@style/DetailText"
+                android:text="@{movie.description}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/summaryTitle" />
+
+            <TextView
+                android:id="@+id/languageTitle"
+                style="@style/TitleText"
+                android:text="Language"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/summaryText" />
+
+            <TextView
+                android:id="@+id/languageText"
+                style="@style/DetailText"
+                android:text="@{movie.language}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/languageTitle" />
+
+            <TextView
+                android:id="@+id/releaseDateTitle"
+                style="@style/TitleText"
+                android:text="Release Date"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/languageText" />
+
+            <TextView
+                android:id="@+id/releaseDateText"
+                style="@style/DetailText"
+                android:text="@{movie.releaseDate}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/releaseDateTitle" />
+
+            <TextView
+                android:id="@+id/homePageTitle"
+                style="@style/TitleText"
+                android:text="Home Page"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/releaseDateText" />
+
+            <TextView
+                android:id="@+id/homePageText"
+                style="@style/DetailText"
+                android:text="@{movie.homePage}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homePageTitle" />
+
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/detailGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="videoPoster,videoName,genresTitle,genresText,summaryTitle,summaryText,languageTitle,languageText,releaseDateTitle,releaseDateText,homePageTitle,homePageText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -46,8 +46,8 @@ ext {
             rxKotlin                : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
             rxAndroid               : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
             picasso                 : "com.squareup.picasso:picasso:${picassoVersion}",
-            navigationFragment      : "android.arch.navigation:navigation-fragment:${navigationVersion}",
-            navigationUi            : "android.arch.navigation:navigation-ui:${navigationVersion}",
+            navigationFragment      : "android.arch.navigation:navigation-fragment-ktx:${navigationVersion}",
+            navigationUi            : "android.arch.navigation:navigation-ui-ktx:${navigationVersion}",
     ]
 
     appTestDependencies = [

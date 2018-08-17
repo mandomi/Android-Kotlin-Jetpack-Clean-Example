@@ -1,10 +1,11 @@
-package com.mandomi.cleankotlin.ui.movies
+package com.mandomi.cleankotlin.ui.movie.movies
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mandomi.cleankotlin.databinding.ItemMovieBinding
 import com.mandomi.cleankotlin.ui.listener.RecyclerItemClickListener
+import com.mandomi.cleankotlin.ui.movie.MovieItem
 
 class MoviesAdapter : RecyclerView.Adapter<MovieViewHolder>() {
 

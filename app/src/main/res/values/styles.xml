@@ -8,4 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TitleText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+
+    <style name="DetailText" parent="TitleText">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingBottom">25dp</item>
+        <item name="android:freezesText">true</item>
+    </style>
+
 </resources>

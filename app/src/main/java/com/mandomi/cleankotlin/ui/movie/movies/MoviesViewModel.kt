@@ -1,10 +1,12 @@
-package com.mandomi.cleankotlin.ui.movies
+package com.mandomi.cleankotlin.ui.movie.movies
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.mandomi.cleankotlin.ui.base.BaseViewModel
 import com.mandomi.cleankotlin.ui.base.model.Resource
 import com.mandomi.cleankotlin.ui.base.model.ResourceState
+import com.mandomi.cleankotlin.ui.movie.MovieItem
+import com.mandomi.cleankotlin.ui.movie.MovieMapper
 import com.mandomi.domain.entity.Movie
 import com.mandomi.domain.entity.PagedEntity
 import com.mandomi.domain.interactor.GetMoviesUsecase

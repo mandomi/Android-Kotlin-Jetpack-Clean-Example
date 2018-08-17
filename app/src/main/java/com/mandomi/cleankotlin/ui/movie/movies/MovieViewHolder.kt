@@ -1,9 +1,10 @@
-package com.mandomi.cleankotlin.ui.movies
+package com.mandomi.cleankotlin.ui.movie.movies
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.mandomi.cleankotlin.BR
 import com.mandomi.cleankotlin.ui.listener.RecyclerItemClickListener
+import com.mandomi.cleankotlin.ui.movie.MovieItem
 
 class MovieViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
 

@@ -5,7 +5,7 @@ import com.mandomi.cleankotlin.domain.executer.PostExecutionThread
 import com.mandomi.cleankotlin.domain.executer.UseCaseExecutor
 import com.mandomi.cleankotlin.executer.ExecutorThread
 import com.mandomi.cleankotlin.executer.UIThread
-import com.mandomi.cleankotlin.core.CleanKotlinAppication
+import com.mandomi.cleankotlin.core.CleanKotlinApplication
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -15,7 +15,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideContext(application: CleanKotlinAppication): Context = application.applicationContext
+    fun provideContext(application: CleanKotlinApplication): Context = application.applicationContext
 
     @Provides
     @Singleton

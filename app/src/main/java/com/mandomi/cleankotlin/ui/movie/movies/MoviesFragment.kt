@@ -1,47 +1,58 @@
-package com.mandomi.cleankotlin.ui.movies
+package com.mandomi.cleankotlin.ui.movie.movies
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.Toast
+import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.mandomi.cleankotlin.R
 import com.mandomi.cleankotlin.extension.createViewModel
 import com.mandomi.cleankotlin.extension.observe
-import com.mandomi.cleankotlin.ui.base.BaseActivity
+import com.mandomi.cleankotlin.ui.base.BaseFragment
 import com.mandomi.cleankotlin.ui.base.model.Resource
 import com.mandomi.cleankotlin.ui.base.model.ResourceState
 import com.mandomi.cleankotlin.ui.listener.RecyclerItemClickListener
-import kotlinx.android.synthetic.main.activity_movies.*
+import com.mandomi.cleankotlin.ui.movie.MovieItem
+import kotlinx.android.synthetic.main.fragment_movies.*
 
-class MoviesActivity : BaseActivity(), RecyclerItemClickListener<MovieItem> {
+class MoviesFragment : BaseFragment(), RecyclerItemClickListener<MovieItem> {
 
     private lateinit var viewModel: MoviesViewModel
     private val adapter: MoviesAdapter = MoviesAdapter()
 
 
     override fun onClick(t: MovieItem) {
-        Toast.makeText(this, t.name, Toast.LENGTH_SHORT).show()
+        val direction = MoviesFragmentDirections.ActionMoviesFragmentToMovieDetailFragment(t.id)
+        view?.findNavController()?.navigate(direction)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_movies)
-        init()
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_movies, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         viewModel = createViewModel(viewModelFactory) {
             observe(getData(), ::handleResourceState)
         }
         viewModel.load()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        init()
+    }
+
     private fun init() {
 
         with(adapter) {
-            onItemClickListener = this@MoviesActivity
+            onItemClickListener = this@MoviesFragment
         }
 
         with(recyclerView) {
             setHasFixedSize(false)
-            adapter = this@MoviesActivity.adapter
+            adapter = this@MoviesFragment.adapter
             setPadding(0, 0, 0, 0)
             itemAnimator?.changeDuration = 0
             layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
